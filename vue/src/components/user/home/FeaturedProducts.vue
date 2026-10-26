@@ -26,10 +26,11 @@ const formatPrice = (price) => {
 }
 
 const getImagePath = (product) => {
+  const getNoImage = "https://res.cloudinary.com/df1wrn1az/image/upload/v1768964222/no-image_v1ltyr.png"
   if (product.mainImage) return product.mainImage
-  if (!product.hinhAnh || product.hinhAnh.length === 0) return '/images/products/no-image.jpg'
+  if (!product.hinhAnh || product.hinhAnh.length === 0) return getNoImage
   const mainImage = product.hinhAnh.find(img => img.anhChinh) || product.hinhAnh[0]
-  return mainImage ? `/uploads/products/${mainImage.duongDan}` : '/images/products/no-image.jpg'
+  return mainImage ? `${mainImage.duongDan}` : getNoImage
 }
 
 const openQuickAddModal = (product) => {

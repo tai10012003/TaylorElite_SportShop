@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- Hero Mini -->
     <div class="hero-mini">
       <div class="container">
         <h1 class="display-6 text-center mb-4">SẢN PHẨM THỂ THAO</h1>
@@ -48,10 +47,8 @@
         </div>
       </div>
     </div>
-
     <div class="container py-5">
       <div class="row">
-        <!-- Sidebar lọc sản phẩm -->
         <div class="col-lg-3">
           <ProductSidebar
             :categories="categories"
@@ -62,8 +59,6 @@
             @set-filter="setFilter"
           />
         </div>
-
-        <!-- Danh sách sản phẩm -->
         <div class="col-lg-9">
           <div class="product-controls mb-4">
             <div class="row align-items-center">
@@ -85,7 +80,6 @@
               </div>
             </div>
           </div>
-
           <transition-group name="fade-in-up" tag="div" class="row g-4">
             <div v-for="product in products" :key="product.id" class="col-md-4">
               <ProductCard :product="product" @add-to-cart="addToCart" />
@@ -94,7 +88,6 @@
           <div v-if="!products.length" class="col-12">
             <p class="text-center">Không tìm thấy sản phẩm nào</p>
           </div>
-
           <ProductPagination
             :totalPages="totalPages"
             :currentPage="currentPage"
@@ -129,8 +122,6 @@ const filters = reactive({
 
 const suggestions = ref([])
 let suggestTimeout = null
-
-const VUE_BASE_URL = 'http://localhost:5173'
 
 const priceRanges = [
   { value: '', label: 'Tất cả' },
@@ -167,14 +158,14 @@ function goToPage(page) {
 function formatPrice(price) {
   return price ? price.toLocaleString('vi-VN') + '₫' : ''
 }
+
 function getMainImage(product) {
   if (!product.hinhAnh || !product.hinhAnh.length) return ''
   const mainImage = product.hinhAnh.find(img => img.anhChinh) || product.hinhAnh[0]
   if (!mainImage) return ''
-  return mainImage.duongDan.startsWith('http')
-    ? mainImage.duongDan
-    : `${VUE_BASE_URL}${mainImage.duongDan.replace('/assets', '/src/assets')}`
+  return `${mainImage.duongDan}`
 }
+
 function onSearch() {
   currentPage.value = 1
   suggestions.value = []

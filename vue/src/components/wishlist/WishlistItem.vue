@@ -11,10 +11,10 @@
         {{ item.tenSanPham }}
       </router-link>
       <div class="category">
-        Danh mục: <strong>{{ item.maDanhMuc || 'N/A' }}</strong>
+        Danh mục: <strong>{{ item.tenDanhMuc || 'N/A' }}</strong>
       </div>
       <div class="brand">
-        Thương hiệu: <strong>{{ item.maThuongHieu || 'N/A' }}</strong>
+        Thương hiệu: <strong>{{ item.tenThuongHieu || 'N/A' }}</strong>
       </div>
     </div>
     <div class="td-price">
@@ -35,6 +35,13 @@
     </div>
     <div class="td-action">
       <button
+        class="btn-add-to-cart"
+        @click="openQuickAddModal(item)"
+      >
+        <i class="bi bi-cart"></i>
+        Thêm giỏ hàng
+      </button>
+      <button
         class="btn-remove"
         @click="handleRemove"
         :disabled="removing"
@@ -43,11 +50,17 @@
         Xóa
       </button>
     </div>
+    <QuickAddModal 
+      :is-open="isModalOpen" 
+      :product="selectedProduct"
+      @close="closeModal"
+    />
   </div>
 </template>
   
 <script setup>
 import { ref } from 'vue'
+import QuickAddModal from '@/components/user/product/QuickAddProductToCart.vue'
 import WishlistService from '@/services/WishlistService'
 import Swal from 'sweetalert2'
 
@@ -58,6 +71,9 @@ const props = defineProps({
   }
 })
 
+const selectedProduct = ref(null)
+const isModalOpen = ref(false)
+
 const emit = defineEmits(['removed'])
 
 const removing = ref(false)
@@ -65,8 +81,37 @@ const removing = ref(false)
 const formatPrice = (price) => new Intl.NumberFormat('vi-VN').format(price)
 
 const getImagePath = (item) => {
-  if (!item.hinhAnh) return '/images/products/no-image.jpg'
-  return `/uploads/products/${item.hinhAnh}`
+  const getNoImage = "https://res.cloudinary.com/df1wrn1az/image/upload/v1768964222/no-image_v1ltyr.png"
+  if (item.hinhAnhList && item.hinhAnhList.length > 0) return item.hinhAnhList[0]
+  if (item.hinhAnh) return item.hinhAnh
+  return getNoImage
+}
+
+const openQuickAddModal = (item) => {
+  const getNoImage = "https://res.cloudinary.com/df1wrn1az/image/upload/v1768964222/no-image_v1ltyr.png"
+  let images = []
+  if (Array.isArray(item.hinhAnhList) && item.hinhAnhList.length > 0) {
+    images = item.hinhAnhList
+  } else if (item.hinhAnh) {
+    images = [item.hinhAnh]
+  } else {
+    images = [getNoImage]
+  }
+  const product = {
+    ...item,
+    hinhAnh: images,
+    averageRating: item.averageRating ?? 0,
+    totalReviews: item.totalReviews ?? 0,
+    kichThuoc: item.kichThuoc,
+    mauSac: item.mauSac,
+    slug: item.slug
+  }
+  selectedProduct.value = product
+  isModalOpen.value = true
+}
+
+const closeModal = () => {
+  isModalOpen.value = false
 }
 
 const handleRemove = async () => {
@@ -200,7 +245,33 @@ const handleRemove = async () => {
 
 .td-action {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.btn-add-to-cart {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 8px;
+  background: white;
+  border: 2px solid #059669;
+  color: #059669;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.btn-add-to-cart:hover:not(:disabled) {
+  background: #047857;
+  border-color: #047857;
+  color: #fff;
+}
+
+.btn-add-to-cart:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .btn-remove {
