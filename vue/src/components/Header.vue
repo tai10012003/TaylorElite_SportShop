@@ -103,7 +103,7 @@ function isActive(path) {
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
       <router-link class="navbar-brand" to="/" @click="closeSidebar">
-        <span class="gradient-text">Sport</span><strong>Elite</strong>
+        <span class="gradient-text">Taylor</span><strong>Elite</strong>
       </router-link>
       <div class="mobile-actions d-lg-none">
         <router-link class="mobile-cart-btn" to="/gio-hang" :class="{ active: isActive('/gio-hang') }">
@@ -203,7 +203,7 @@ function isActive(path) {
   <div class="mobile-sidebar" :class="{ active: isSidebarOpen }">
     <div class="sidebar-header">
       <div class="sidebar-brand">
-        <span class="gradient-text">Sport</span><strong>Elite</strong>
+        <span class="gradient-text">Taylor</span><strong>Elite</strong>
       </div>
       <button class="sidebar-close" @click="closeSidebar">
         <i class="bi bi-x-lg"></i>

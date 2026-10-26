@@ -12,7 +12,7 @@
       <div class="auth-form-container">
         <form @submit.prevent="handleSubmit" class="auth-form">
           <h2 class="auth-title">Đăng ký tài khoản</h2>
-          <p class="auth-subtitle">Tham gia cùng Sport Elite ngay hôm nay!</p>
+          <p class="auth-subtitle">Tham gia cùng TaylorElite ngay hôm nay!</p>
           <div class="form-group">
             <label for="username">Tên đăng nhập</label>
             <div class="input-group" :class="{ 'error': v$.tenDangNhap.$error }">

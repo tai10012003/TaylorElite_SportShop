@@ -5,8 +5,8 @@
         <div class="col-lg-6">
           <div class="about-content">
             <h2>CÂU CHUYỆN CỦA CHÚNG TÔI</h2>
-            <p class="leads mb-4">Sport Elite - Hành trình 15 năm đồng hành cùng người yêu thể thao Việt Nam</p>
-            <p>Được thành lập vào năm 2008, Sport Elite đã không ngừng phát triển và khẳng định vị thế là một trong những đơn vị hàng đầu trong lĩnh vực cung cấp thiết bị thể thao cao cấp tại Việt Nam.</p>
+            <p class="leads mb-4">TaylorElite - Hành trình 15 năm đồng hành cùng người yêu thể thao Việt Nam</p>
+            <p>Được thành lập vào năm 2008, TaylorElite đã không ngừng phát triển và khẳng định vị thế là một trong những đơn vị hàng đầu trong lĩnh vực cung cấp thiết bị thể thao cao cấp tại Việt Nam.</p>
             <p>Chúng tôi tự hào là đối tác chính thức của các thương hiệu thể thao hàng đầu thế giới, mang đến cho khách hàng những sản phẩm chất lượng cao với giá cả hợp lý nhất.</p>
           </div>
         </div>

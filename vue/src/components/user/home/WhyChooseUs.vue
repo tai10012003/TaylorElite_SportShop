@@ -10,7 +10,7 @@ const whyChooseUs = [
 <template>
   <section class="why-choose-us bg-light">
     <div class="container">
-      <h3 class="section-title">TẠI SAO CHỌN SPORT ELITE ?</h3>
+      <h3 class="section-title">TẠI SAO CHỌN TAYLORELITE ?</h3>
       <div class="row g-4">
         <div v-for="(item, index) in whyChooseUs" :key="index" class="col-lg-3 col-md-6">
           <div class="feature-box">

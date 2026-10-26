@@ -135,7 +135,7 @@ const handlePlaceOrder = async (orderTotals) => {
       title: 'Đặt hàng thành công! 🎉',
       html: `
         <p><strong>Mã đơn hàng:</strong> ${result.maDonHang}</p>
-        <p>Cảm ơn bạn đã mua hàng tại Sport Elite!</p>
+        <p>Cảm ơn bạn đã mua hàng tại TaylorElite!</p>
       `,
       confirmButtonText: 'Xem đơn hàng',
       showCancelButton: true,

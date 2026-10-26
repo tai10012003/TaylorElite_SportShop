@@ -28,7 +28,7 @@ const contactInfo = [
   {
     icon: 'bi bi-envelope-fill',
     title: 'Email',
-    text: 'contact@sportelite.com'
+    text: 'contact@taylorelite.com'
   },
   {
     icon: 'bi bi-clock-fill',
@@ -52,9 +52,9 @@ const scrollToTop = () => {
         <div class="row g-4">
           <div class="col-lg-3 col-md-6">
             <div class="footer-widget">
-              <h4 class="widget-title">Về Sport Elite</h4>
+              <h4 class="widget-title">Về TaylorElite</h4>
               <div class="footer-logo mb-3">
-                <span class="gradient-text">Sport</span><strong>Elite</strong>
+                <span class="gradient-text">Taylor</span><strong>Elite</strong>
               </div>
               <p class="mb-4">Chuyên cung cấp các sản phẩm thể thao chính hãng với chất lượng cao nhất. Đảm bảo uy tín và dịch vụ tốt nhất cho khách hàng.</p>
             </div>
@@ -108,7 +108,7 @@ const scrollToTop = () => {
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-12">
-            <p class="mb-md-0 text-center">© {{ new Date().getFullYear() }} Sport Elite. All rights reserved.</p>
+            <p class="mb-md-0 text-center">© {{ new Date().getFullYear() }} TaylorElite. All rights reserved.</p>
           </div>
         </div>
       </div>

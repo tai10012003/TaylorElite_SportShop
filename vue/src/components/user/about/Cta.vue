@@ -1,7 +1,7 @@
 <template>
   <section class="about-cta bg-primary text-white">
     <div class="container text-center">
-      <h2 class="mb-4">Bắt đầu hành trình của bạn cùng Sport Elite</h2>
+      <h2 class="mb-4">Bắt đầu hành trình của bạn cùng TaylorElite</h2>
       <p class="lead mb-4">Hãy để chúng tôi đồng hành cùng bạn trên con đường chinh phục mục tiêu tập luyện</p>
       <div class="cta-buttons">
         <router-link to="/contact" class="btn btn-light btn-lg me-3">

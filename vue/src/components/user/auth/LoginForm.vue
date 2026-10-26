@@ -11,7 +11,7 @@
       </div>
       <div class="auth-form-container">
         <form @submit.prevent="handleSubmit" class="auth-form">
-          <h2 class="auth-title">Đăng nhập Sport Elite</h2>
+          <h2 class="auth-title">Đăng nhập TaylorElite</h2>
           <p class="auth-subtitle">Chào mừng bạn trở lại! Vui lòng đăng nhập để tiếp tục.</p>
           <div class="form-group">
             <label for="email">Email</label>
@@ -120,7 +120,7 @@ async function handleSubmit() {
     await Swal.fire({
       icon: 'success',
       title: 'Đăng nhập thành công',
-      text: 'Chào mừng bạn quay trở lại Sport Elite!',
+      text: 'Chào mừng bạn quay trở lại TaylorElite!',
       timer: 1500,
       showConfirmButton: false
     })

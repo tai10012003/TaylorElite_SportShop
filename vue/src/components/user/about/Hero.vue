@@ -1,7 +1,7 @@
 <template>
   <div class="about-hero">
     <div class="container">
-      <h1 class="about-title">GIỚI THIỆU SPORT ELITE</h1>
+      <h1 class="about-title">GIỚI THIỆU TAYLORELITE</h1>
       <p class="about-subtitle">Đồng hành cùng đam mê thể thao của bạn</p>
     </div>
   </div>
